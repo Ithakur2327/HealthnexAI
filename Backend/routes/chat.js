@@ -1,0 +1,16 @@
+const express = require('express');
+const router = express.Router();
+const {
+  sendMessage,
+  getChatHistory,
+  getMyChats,
+  deleteChat,
+} = require('../controllers/chatController');
+const { protect } = require('../middleware/auth');
+
+router.post('/message', protect, sendMessage);
+router.get('/my-chats', protect, getMyChats);
+router.get('/:chatId', protect, getChatHistory);
+router.delete('/:chatId', protect, deleteChat);
+
+module.exports = router;

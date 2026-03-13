@@ -1,0 +1,45 @@
+const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Please add a name'],
+    trim: true
+  },
+  email: {
+    type: String,
+    required: [true, 'Please add an email'],
+    unique: true,
+    lowercase: true,
+    trim: true,
+    match: [
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+      'Please add a valid email'
+    ]
+  },
+  password: {
+    type: String,
+    required: [true, 'Please add a password'],
+    minlength: 6
+  },
+  age: {
+    type: Number
+  },
+  gender: {
+    type: String,
+    enum: ['male', 'female', 'other']
+  },
+  phone: {
+    type: String
+  },
+  address: {
+    type: String
+  },
+  profilePicture: {
+    type: String
+  }
+}, {
+  timestamps: true
+});
+
+module.exports = mongoose.model('User', userSchema);

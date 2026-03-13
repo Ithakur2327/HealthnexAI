@@ -1,0 +1,71 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        // Light mode: warm blue-gray — not pure white
+        gray: {
+          50:  '#eef2f7',
+          100: '#e2e8f1',
+          200: '#ccd5e3',
+          300: '#a8b8cc',
+          400: '#7a94ae',
+          500: '#566a82',
+          600: '#3d5166',
+          700: '#1e2d3d',
+          800: '#111e2d',
+          900: '#080f1a',
+          950: '#040a12',
+        },
+        cyan: {
+          50:  '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+          950: '#083344',
+        },
+        teal: {
+          50:  '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+          950: '#042f2e',
+        },
+      },
+      boxShadow: {
+        'sm':  '0 2px 6px rgba(15,29,46,0.07), 0 1px 2px rgba(15,29,46,0.04)',
+        DEFAULT:'0 4px 16px rgba(15,29,46,0.09), 0 2px 4px rgba(15,29,46,0.05)',
+        'md':  '0 4px 16px rgba(15,29,46,0.10), 0 2px 6px rgba(15,29,46,0.06)',
+        'lg':  '0 8px 32px rgba(15,29,46,0.12), 0 4px 8px rgba(15,29,46,0.07)',
+        'xl':  '0 16px 48px rgba(15,29,46,0.14), 0 8px 16px rgba(15,29,46,0.08)',
+        '2xl': '0 24px 64px rgba(15,29,46,0.18), 0 12px 24px rgba(15,29,46,0.10)',
+        'cyan':'0 0 24px rgba(6,182,212,0.25)',
+        'teal':'0 0 24px rgba(20,184,166,0.25)',
+      },
+      backgroundImage: {
+        'brand-gradient': 'linear-gradient(135deg, #0891b2 0%, #0d9488 100%)',
+        'brand-gradient-soft': 'linear-gradient(135deg, rgba(8,145,178,0.12) 0%, rgba(13,148,136,0.12) 100%)',
+        'page-gradient-light': 'linear-gradient(160deg, #eef2f7 0%, #e8f4f8 50%, #edf6f5 100%)',
+        'page-gradient-dark':  'linear-gradient(160deg, #080f1a 0%, #0a1520 50%, #080f18 100%)',
+      },
+    },
+  },
+  plugins: [],
+}
